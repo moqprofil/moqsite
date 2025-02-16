@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Фитнес Блог - Хранене</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0d0d0d;
+      color: #fff;
+    }
+    header {
+      background: linear-gradient(90deg, #ff5733, #ff9800);
+      padding: 25px;
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+    header:hover {
+      opacity: 0.8;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #222;
+      padding: 15px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 20px;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ff9800;
+    }
+    .container {
+      padding: 50px;
+      text-align: left;
+      max-width: 800px;
+      margin: auto;
+    }
+    .blog-post {
+      padding: 30px;
+      margin-bottom: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(255, 87, 51, 0.3);
+    }
+    .blog-post h2 {
+      color: #ff9800;
+    }
+    .blog-post p {
+      line-height: 1.6;
+    }
+    footer {
+      background-color: #222;
+      text-align: center;
+      padding: 20px;
+      font-size: 18px;
+    }
+  </style>
+  <script>
+    function goToMainPage() {
+      window.location.href = 'mainpage.html';
+    }
+  </script>
+</head>
+<body>
+<header onclick="goToMainPage()">Фитнес Блог - Хранене</header>
+<nav>
+  <a href="mainpage.html">Начало</a>
+  <a href="blogspage.html">Статии</a>
+  <a href="hranenepage.html">Хранене</a>
+  <a href="trainingpage.html">Тренировки</a>
+  <a href="calculatorpage.html" class="active">Калкулатор</a>
+  <a href="caloriipage.html" class="active">Калории</a>
+  <a href="foruspage.html">За нас</a>
+  <a href="contactpage.html">Контакти</a>
+</nav>
+<div class="container">
+  <section id="nutrition">
+    <h2>Хранене</h2>
+    <div class="blog-post">
+      <h2>Топ 10 храни за мускулен растеж</h2>
+      <p>Ако искате да изградите мускулна маса, включете тези храни в диетата си.</p>
+    </div>
+    <div class="blog-post">
+      <h2>Как да се храним преди и след тренировка?</h2>
+      <p>Разберете кои храни са най-добри за оптимално възстановяване и енергия.</p>
+    </div>
+    <div class="blog-post">
+      <h2>Здравословни рецепти за спортисти</h2>
+      <p>Опитайте тези лесни и бързи рецепти за по-добра физическа форма.</p>
+    </div>
+  </section>
+</div>
+<footer>
+  &copy; 2025 Фитнес Блог. Всички права запазени.
+</footer>
+</body>
+</html>
