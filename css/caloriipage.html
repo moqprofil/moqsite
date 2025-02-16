@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Фитнес Блог - Калориен Калкулатор За Храни</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0d0d0d;
+      color: #fff;
+    }
+    header {
+      background: linear-gradient(90deg, #ff5733, #ff9800);
+      padding: 25px;
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+    header:hover {
+      opacity: 0.8;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #222;
+      padding: 15px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 20px;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ff9800;
+      font-weight: bold;
+    }
+    .container {
+      padding: 50px;
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+    }
+    .calculator-section {
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(255, 87, 51, 0.4);
+    }
+    .calculator-section h2 {
+      color: #ff9800;
+    }
+    .calculator-section label {
+      font-size: 18px;
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+    .calculator-section input, .calculator-section select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 8px;
+      background: #333;
+      color: #fff;
+      font-size: 16px;
+    }
+    .calculator-section button {
+      background: linear-gradient(90deg, #ff9800, #ff5733);
+      color: white;
+      padding: 12px 18px;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .calculator-section button:hover {
+      opacity: 0.8;
+    }
+    #food-result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #ff9800;
+    }
+    footer {
+      background-color: #222;
+      text-align: center;
+      padding: 20px;
+      font-size: 18px;
+      margin-top: 30px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  </style>
+  <script>
+    function goToMainPage() {
+      window.location.href = 'mainpage.html';
+    }
+    function calculateFoodCalories() {
+      let food = document.getElementById("food").value;
+      let quantity = parseFloat(document.getElementById("quantity").value);
+
+      let caloriesPer100g = {
+        "apple": 52,
+        "banana": 89,
+        "chicken": 165,
+        "rice": 130,
+        "egg": 155,
+        "bread": 265
+      };
+
+      if (food in caloriesPer100g) {
+        let totalCalories = (caloriesPer100g[food] * quantity) / 100;
+        document.getElementById("food-result").innerText = "Калории: " + Math.round(totalCalories) + " kcal";
+      } else {
+        document.getElementById("food-result").innerText = "Няма информация за тази храна";
+      }
+    }
+  </script>
+</head>
+<body>
+<header onclick="goToMainPage()">Фитнес Блог - Калориен Калкулатор</header>
+<nav>
+  <a href="mainpage.html">Начало</a>
+  <a href="blogspage.html">Статии</a>
+  <a href="hranenepage.html">Хранене</a>
+  <a href="trainingpage.html">Тренировки</a>
+  <a href="calculatorpage.html" class="active">Калкулатор</a>
+  <a href="caloriespage.html">Калории</a>
+  <a href="foruspage.html">За нас</a>
+  <a href="contactpage.html">Контакти</a>
+</nav>
+<div class="container">
+  <section id="food-calculator">
+    <h2>Калкулатор за калории на храни</h2>
+    <div class="calculator-section">
+      <label for="food">Избери храна:</label>
+      <select id="food" required>
+        <option value="apple">Ябълка</option>
+        <option value="banana">Банан</option>
+        <option value="chicken">Пилешко месо</option>
+        <option value="rice">Ориз</option>
+        <option value="egg">Яйце</option>
+        <option value="bread">Хляб</option>
+      </select>
+
+      <label for="quantity">Количество (грамове):</label>
+      <input type="number" id="quantity" required>
+
+      <button onclick="calculateFoodCalories()">Изчисли</button>
+      <p id="food-result"></p>
+    </div>
+  </section>
+</div>
+<footer>
+  &copy; 2025 Фитнес Блог. Всички права запазени.
+</footer>
+</body>
+</html>
